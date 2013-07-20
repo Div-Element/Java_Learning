@@ -1,0 +1,334 @@
+\documentclass{report}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{lipsum}
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkDesDiff$\varepsilon$\hmwkDesTime\ : \hmwkTitle} % Top center head
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0} % This is the color used for comments
+\lstloadlanguages{Perl} % Load Perl syntax for listings, for a list of other languages supported see: ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+\lstset{language=Java, % Use Perl in this example
+        frame=single, % Single frame around code
+        basicstyle=\small\ttfamily, % Use small true type font
+        keywordstyle=[1]\color{Blue}\bf, % Perl functions bold and blue
+        keywordstyle=[2]\color{Purple}, % Perl function arguments purple
+        keywordstyle=[3]\color{Blue}\underbar, % Custom functions underlined and blue
+        identifierstyle=, % Nothing special about identifiers                                         
+        commentstyle=\usefont{T1}{pcr}{m}{sl}\color{MyDarkGreen}\small, % Comments small dark green courier font
+        stringstyle=\color{Purple}, % Strings are purple
+        showstringspaces=false, % Don't put marks in string spaces
+        tabsize=5, % 5 spaces per tab
+        %
+        % Put standard Perl functions not included in the default language here
+        morekeywords={rand},
+        %
+        % Put Perl function parameters here
+        morekeywords=[2]{on, off, interp},
+        %
+        % Put user defined functions here
+        morekeywords=[3]{test},
+       	%
+        morecomment=[l][\color{Blue}]{...}, % Line continuation (...) like blue comment
+        numbers=left, % Line numbers on left
+        firstnumber=1, % Line numbers start with line 1
+        numberstyle=\tiny\color{Blue}, % Line numbers are blue and small
+        stepnumber=5 % Line numbers go in steps of 5
+}
+
+% Creates a new command to include a perl script, the first parameter is the filename of the script (without .pl), the second parameter is the caption
+\newcommand{\Java}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.java}
+\end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[2][Part \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName : #2} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkDesDiff}{A} % Difficulty
+\newcommand{\hmwkDesTime}{01} % Time Factor
+\newcommand{\hmwkTitle}{Fun with Hello\ World!} % Assignment title
+
+\newcommand{\hmwkCreationDate}{Monday,\ January\ 1,\ 2012} % Due date
+\newcommand{\hmwkUpdateDate}{Monday,\ January\ 1,\ 2012} % Due date
+
+\newcommand{\hmwkAuthorName}{Nicholas `Timethor' Rich} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkDesDiff$\varepsilon$\hmwkDesTime\ :\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Created\ on\ \hmwkCreationDate}\\
+%\normalsize\vspace{0.1in}\small{Updated\ on\ \hmwkUpdateDate}\\
+\vspace{3in}
+Authored by:
+}
+\author{\textbf{\hmwkAuthorName}}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	INTRO
+%----------------------------------------------------------------------------------------
+
+\section{Overview}
+\hspace{2em}\large{This assignment will be an exercise in getting used to Java output. You will be writing one of the most popular introductory programs in the world. Hello World!}\\
+
+\section{Background}
+\hspace{2em}\large{There are many methods in Java that will help your program talk to a user. There are three main versions that output to the console and one that creates a small window with an Ok button so you can close it.\\
+
+\textbf{Console Output}\hrulefill\\
+
+\texttt{System.out.print("Hello there");}
+
+\hspace{2em}This one outputs what is in between the parenthesis without going to a new line after.\\
+
+\texttt{System.out.println("Hello there");}
+
+\hspace{2em}This one outputs what is in between the parenthesis and then goes to the next line.\\
+
+\texttt{System.out.printf("\%s", "Hello there");}
+
+\hspace{2em}This one allows you to format your output. For each \%s, \texttt{printf()} expects a new parameter. For example:
+\texttt{System.out.printf("\%s \%s", "Hello", "there");}\\
+prints the same as the one above. Notice there is a space between the two \%s's this time. Essentially, the \%s's are replaced with each of the following inputs. So, the first \%s is replaced with "Hello" and the second is replaced with "there". Interesting right?\\
+
+\textbf{Windowed Output}\hrulefill\\
+
+\texttt{JOptionPane.showMessageDialog(null, "Hello there")}
+ 
+\hspace{2em}This one creates a small window that displays the message given. Running this multiple times will open multiple windows.\\
+}
+
+\normalsize{}
+
+%----------------------------------------------------------------------------------------
+%	PART 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}{Basic Hello World!}
+
+\homeworkSection{Program}
+First this first part, you will be using \texttt{System.out.print();} for your output.
+
+\homeworkSection{Requirements}
+You need to use a different \texttt{print()} for each word and punctuation mark. In total that is three \texttt{print()}s.
+
+\homeworkSection{Notice!}
+See how using \texttt{print()} puts everything on a single line? Next we will explore how to put text on a new line.
+
+\homeworkSection{Example Output}
+\begin{lstlisting}
+Hello World!
+\end{lstlisting}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PART 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}{Hello World! on separate lines}
+
+\homeworkSection{Program}
+Now, add to what you already have. Use \texttt{System.out.println();} for new your output.
+
+\homeworkSection{Requirements}
+You need to use a different \texttt{println()} for each word and punctuation mark. In total that is three \texttt{println()}s to add. 
+
+Also, You should have a line from the previous part that looks like: \\
+\texttt{System.out.print("!");} \\
+change it to: \\
+\texttt{System.out.print("!\textbackslash n");} \\
+
+The "\textbackslash n" that you added will turn \texttt{print()} into \texttt{println()}
+
+\homeworkSection{Example Output}
+\begin{lstlisting}
+Hello World!
+Hello
+World
+!
+\end{lstlisting}
+\end{homeworkProblem}
+
+\newpage
+%----------------------------------------------------------------------------------------
+%	PART 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}{Hello World! using formatting}
+
+\homeworkSection{Program}
+Again, add to what you already have. This time, use \texttt{System.out.printf();} for new your output.
+
+\homeworkSection{Requirements}
+Just use one \texttt{printf()} for this part. This time for the format part, use three \%s's and give \texttt{printf()} the extra input "Hello", "World", "!". See the background section if you are confused.
+
+The "\textbackslash n" that you added will turn \texttt{print()} into \texttt{println()}
+
+\homeworkSection{Example Output}
+\begin{lstlisting}
+Hello World!
+Hello
+World
+!
+Hello World!
+\end{lstlisting}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%	PART 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}{Hello World! in a window}
+
+\homeworkSection{Program}
+Again, add to what you already have. This time, use \texttt{JOptionPane.showMessageDialog()} for new your output.
+
+if you are not using netbeans or another IDE, you will need to add an import at the top of the file like this: \texttt{import javax.swing.JOptionPane;}
+
+\homeworkSection{Requirements}
+This one can be simple. Just use JOptionPane to make a window that says Hello World!.
+
+The "\textbackslash n" that you added will turn \texttt{print()} into \texttt{println()}
+
+\homeworkSection{Example Output}
+Console:
+\begin{lstlisting}
+Hello World!
+Hello
+World
+!
+Hello World!
+\end{lstlisting}
+Window:
+\begin{lstlisting}
+Hello World!
+\end{lstlisting}
+\end{homeworkProblem}
+\newpage
+%----------------------------------------------------------------------------------------
+%	BONUS
+%----------------------------------------------------------------------------------------
+
+\section{BONUS: More \texttt{printf()}}
+
+\homeworkSection{Program}
+Enough of Hello World!, let's have some real fun! Comment out everything you have so far. This part will take a bit of thinking if you have never done anything like this before, but nothing you can't accomplish!
+
+\homeworkSection{Requirements}
+Write a short story of about 6 lines or copy paste from something of your choice. Find a way to format it so that it looks good when the console prints it i.e. It is wrapped to a certain number of characters. Try using \texttt{printf} to do this. So you get used to using it as it will be important for later assignments.
+
+\homeworkSection{Hints}
+\begin{itemize}
+\item The "\textbackslash n" that you added to \texttt{print()} can also be added to \texttt{printf()} in the format string like "\%s\textbackslash n" to get the same effect.
+\item You will need to make a String variable to store your story.
+\item Strings have the methods length() and substring() that can be helpful for wrapping the story.
+\item Strings also have the methods startsWith() and endsWith() that can be helpful for adding a dash ("-") if needed at the end of a line.
+\item You want to create a loop that will end when your story has been broken into wrapped lines and printed.
+\end{itemize}
+
+\homeworkSection{Example Output}
+Console:
+\begin{lstlisting}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut
+ purus elit, vestibulum ut, placerat ac, adipiscing vitae, f-
+elis. Curabitur dictum gravida mauris. Nam arcu libero, nonu-
+mmy eget, consectetuer id, vulputate a, magna. Donec vehicul-
+a augue eu neque. Pellentesque habitant morbi tristique sene-
+ctus et netus et malesuada fames ac turpis egestas.
+\end{lstlisting}
+%----------------------------------------------------------------------------------------
+
+\end{document}
