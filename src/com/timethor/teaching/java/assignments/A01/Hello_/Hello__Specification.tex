@@ -1,0 +1,258 @@
+\documentclass{report}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{lipsum}
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkDesDiff$\varepsilon$\hmwkDesTime\ : \hmwkTitle} % Top center head
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0} % This is the color used for comments
+\lstloadlanguages{Perl} % Load Perl syntax for listings, for a list of other languages supported see: ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+\lstset{language=Java, % Use Perl in this example
+        frame=single, % Single frame around code
+        basicstyle=\small\ttfamily, % Use small true type font
+        keywordstyle=[1]\color{Blue}\bf, % Perl functions bold and blue
+        keywordstyle=[2]\color{Purple}, % Perl function arguments purple
+        keywordstyle=[3]\color{Blue}\underbar, % Custom functions underlined and blue
+        identifierstyle=, % Nothing special about identifiers                                         
+        commentstyle=\usefont{T1}{pcr}{m}{sl}\color{MyDarkGreen}\small, % Comments small dark green courier font
+        stringstyle=\color{Purple}, % Strings are purple
+        showstringspaces=false, % Don't put marks in string spaces
+        tabsize=5, % 5 spaces per tab
+        %
+        % Put standard Perl functions not included in the default language here
+        morekeywords={rand},
+        %
+        % Put Perl function parameters here
+        morekeywords=[2]{on, off, interp},
+        %
+        % Put user defined functions here
+        morekeywords=[3]{test},
+       	%
+        morecomment=[l][\color{Blue}]{...}, % Line continuation (...) like blue comment
+        numbers=left, % Line numbers on left
+        firstnumber=1, % Line numbers start with line 1
+        numberstyle=\tiny\color{Blue}, % Line numbers are blue and small
+        stepnumber=5 % Line numbers go in steps of 5
+}
+
+% Creates a new command to include a perl script, the first parameter is the filename of the script (without .pl), the second parameter is the caption
+\newcommand{\Java}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.java}
+\end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[2][Part \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName : #2} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkDesDiff}{A} % Difficulty
+\newcommand{\hmwkDesTime}{01} % Time Factor
+\newcommand{\hmwkTitle}{Say Hi to the user!} % Assignment title
+
+\newcommand{\hmwkCreationDate}{Monday,\ July\ 23,\ 2013} % Due date
+\newcommand{\hmwkUpdateDate}{\today} % Due date
+
+\newcommand{\hmwkAuthorName}{Nicholas `Timethor' Rich} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkDesDiff$\varepsilon$\hmwkDesTime\ :\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Created\ on\ \hmwkCreationDate}\\
+\normalsize\vspace{0.1in}\small{Updated\ on\ \hmwkUpdateDate}\\
+\vspace{3in}
+Authored by:
+}
+\author{\textbf{\hmwkAuthorName}}
+\date{}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	INTRO
+%----------------------------------------------------------------------------------------
+
+\section{Overview}
+\hspace{2em}\large{This assignment will be an exercise in getting used to Java input and output. You will be writing an addition to one of the most popular introductory programs in the world. Hello World!, Only now you are interested in a single user.}\\
+
+\section{Background}
+\hspace{2em}\large{There are many methods in Java that will help your program get input from a user. Two of these methods are commonplace and simple to use, both of which are console based. We will get into JOptionPane based and graphical input much later when we address graphical user interfaces.\\
+
+\textbf{Console Input}\hrulefill\\
+
+\texttt{Scanner scanner = new Scanner(System.in);\\
+String input = scanner.next();}\\
+
+\texttt{BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\\
+String input = br.readLine();}\\
+
+\hspace{2em}These two methods both do relatively the same thing. For now we forget about the differences and focus on the similarity: String input. Take a close look at each one. Notice how both use the System class. This is no coincidence. The System class provides a basis for the majority of input and output for a program, though it is not limited to this. Try completing the assignment by using both methods of user input.\\
+}
+
+\normalsize{}
+\newpage
+%----------------------------------------------------------------------------------------
+%	PART 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}{Basic Input!}
+
+\homeworkSection{Program}
+For this first part, you will be using the \texttt{Scanner} class seen above for your input.
+
+\homeworkSection{Requirements}
+First, use \texttt{System.out.print()} to ask the user what his/her name is. Then use Scanner to get the user's name. You will need to store it in a \texttt{String} variable and then use that variable to say hi to the user.
+
+\homeworkSection{Notice!}
+...how you don't need to put a "\textbackslash n" at the end of the print statement because the user presses the enter button when they are done with their input.
+
+\homeworkSection{Example Output}
+\begin{lstlisting}
+Hi, what is your name? Nick
+Hi Nick.
+\end{lstlisting}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PART 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}{Hello World! on separate lines}
+
+\homeworkSection{Program}
+Now, add to what you already have. Use \texttt{System.out.print();} again for new your output and use the \texttt{BufferedReader} class this time for your input.
+
+\homeworkSection{Requirements}
+Right at the end of what you completed for your last part, add on another question. I used `How old are you' for mine but you can use whatever question you want. Once you add to the end start a \texttt{BufferedReader} like in the Background section and then output what the user told you.
+
+\homeworkSection{Example Output}
+\begin{lstlisting}
+Hi, what is your name? Nick
+Hi Nick. How old are you? 30
+Good to know, you are 30.
+\end{lstlisting}
+\end{homeworkProblem}
+
+\newpage
+%----------------------------------------------------------------------------------------
+%	BONUS
+%----------------------------------------------------------------------------------------
+
+\section{BONUS: More \texttt{printf()}}
+
+\homeworkSection{Program}
+So now you know some information about your user. Continue asking them questions with either method you feel more comfortable with. (You can use the variable for the readers multiple times, you do not need to create a new Scanner for each input line.) Once you have a bunch of information from your user. Print up a summary of the information in a formatted way. See the example output for more of an idea.
+
+\homeworkSection{Guidelines}
+:::TODO:::
+
+\homeworkSection{Hints}
+:::TODO:::
+
+\homeworkSection{Example Output}
+Console:
+\begin{lstlisting}
+Hi, What is your name? Nick
+Hi Nick. How old are you? 30
+Good to know, so when is your birthday? November 24th, 1982
+Cool! and how about where you live? Virginia
+Nice place, you know anyone named steve? Nope
+SUMMARY
+Name          : Nick                          
+Age           : 30                            
+Birthday      : November 24th, 1982           
+Location      : Virginia                      
+Knows Steve?  : Nope  
+\end{lstlisting}
+%----------------------------------------------------------------------------------------
+
+\end{document}
