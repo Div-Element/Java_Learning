@@ -1,21 +1,28 @@
+TODO:: Add prerequisites to title pages
+TODO:: Possibly make a graph showing assignment dependencies
+
 Elementary:
-    A01 - Write a program that asks the user for his/her name and greets him/her with that name
-    A01 - Modify to greet only alice and bob
-    A02 - Write a program that asks the user for a number n and prints the sum of numbers 1 to n
-    A02 - Modify the program such that only multiples of three and five are considered in the sum. i.e. 3,5,9,15 for n=17
-    A02 - ... that asks the user for a number n and gives his the possibility to choose between sum or product of 1 to n
+    A01 - Hello World with different methods of output
+        Topics: Output
+    A02 - Write a program that asks the user for his/her name and greets him/her with that name with different input methods
+        Addition - Modify to greet only alice and bob
+        Topics: 
+    A03 - Write a program that asks the user for a number n and prints the sum of numbers 1 to n
+        Addition - only multiples of three and five are considered in the sum. i.e. 3,5,9,15 for n=17
+        Addition - that asks the user for a number n and gives his the possibility to choose between sum or product of 1 to n
     A02 - ... that prints a multiplication table for numbers up to 12
-    A03 - ... that prints all prime numbers
+    A03 - ... that prints all prime numbers (until a button is pressed?)
     A05 - Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether his numbeer was too small or large. At the end the number of tries needed should be printed. It counts only as one try if the user inputs the same number consecutively.
-    A02 - ... that computes and prints the next 20 leap years from an input year
-    A04 - ... that computes \[4\cdot\sum_{k=1}^{10^6}\frac{(-1)^{k+1}}{2k-1}.\]
+    A03 - ... that computes and prints the next 20 leap years from an input year
+    B04 - ... that computes \[4\cdot\sum_{k=1}^{10^6}\frac{(-1)^{k+1}}{2k-1}.\]
     
+    A05 - Write a welcome prompt that lets you select any of the programs you have written so far. Upon the program asking, make it default to the current project you are working on. Keep it up to date as you complete assignments
 Lists, Strings:
-    A function that returns the largest element in a list
-    a function that reverses a list, preferably in-place
-    ... checks whether an element occurs in a list
-    ... returns the elements on odd positions in a list
-    ... computes the running total of a list
+    A02 - A function that returns the largest element in a list, array, collection
+    B04 - A function that reverses a list, array, colletion ( preferably in-place )
+    B02... checks whether an element occurs in a list - Contains()
+    B03... returns the elements on odd positions in a list
+    ... computes the running total of a list, array, collection
     ... tests whether a string is a palindrome
     ... three functions that compute sum of numbers in a list using a for loop, while loop, and recursion
     ... on_all, that applies a function to every element of a list. Use it to print the first 20 perfect squares.
