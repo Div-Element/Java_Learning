@@ -1,7 +1,7 @@
 Java Learning Suite
 ===================
 
-This will be a rather extensive java tutorial suite for learning Java. 
+This will be a rather extensive java lesson/assignment suite for learning Java from the ground up.
 
 I will be using it to teach one person in particular so dont be suprised if first names and jokes slip in...
 
