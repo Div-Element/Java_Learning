@@ -1,10 +1,10 @@
-package com.timethor.teaching.java.assignments.A01.Hello_;
+package com.timethor.teaching.java.assignments.A02.SayHi;
 
 /**
  *
  * @author Timethor
  */
-public class Hello_ {
+public class SayHi {
 
     /**
      *
