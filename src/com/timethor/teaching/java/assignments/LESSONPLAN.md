@@ -25,6 +25,7 @@ A00P - Proposed Assignment with no assigned number
 ### Elementary ####
 - - -
 L01P - Java Basics and Concepts
+* Pre-reqs: None
 * Topic: Objects and Behaviors => Classes and Methods - How do you make and use them?
 * Topic: Data Types - What are they? Why does Java have them?
 * Topic: Variables - Declarations and Definitions. Assignment methods.
@@ -39,31 +40,44 @@ L01P - Java Basics and Concepts
 
 - - -
 A01C - Hello World with different methods of output
+* Pre-reqs: L01
+* Topics: Basics, Output 
 * Addition: Output wrapping, pick a # of chars for a line, wrap at the end, insert a dash (-) if a word is broken
-* Topics: Output 
 * Addition Topics: Strings
 
 - - -
 A02C - Write a program that asks the user for his/her name and greets him/her with that name with different input methods
-* Addition - Modify to greet only alice and bob
-* Topics: Input, Output
-* Addition Topics: Control Flow(If)
+* Pre-reqs: A01
+* Topics: Basics, Input, Output
+* Addition A - Modify to greet only alice and bob, say goodbye if it isn't.
+* Addition A Topics: Control Flow(If)
 
 - - -
-A00P - Write a program directory that will allow you to pick from previous and future assignments to run them
-* Topics: Input/Output, 
+A03P - Write a program that asks the user for a number n and prints the sum of numbers 1 to n
+* Pre-reqs: A02
+* Topics: I/O, Control Flow(for, do, while), Java Math
+* Addition A - give an option so that only multiples of three and five are considered in the sum. i.e. 3,5,9,15 for n=17
+* Addition B - give another option that gives the user the possibility to choose between sum or product of either 1 to n or addition A
+* Addition C - give another option to take a starting number (m) and calculate either a sum or product of m to n
+* End goal with options - A program that greets the user with two options '1 to n' and 'm to n', selecting either
+gets you another menu displaying 'add all', 'mult all', 'add multiples of 3,5' 'mult multiples of 3,5', selecting any of
+those gets you to another menu. If you selected '1 to n' in the first menu, it asks for n:, otherwise it asks for m: then n:.
+When all inputs have been given for m and n, the program calcuates the correct sum or product as instructed.
+* Addition A,B&C Topics: Control Flow(If, switch)
 
 - - -
-A00P - Write a program that asks the user for a number n and prints the sum of numbers 1 to n
-* Addition - only multiples of three and five are considered in the sum. i.e. 3,5,9,15 for n=17
-* Addition - that asks the user for a number n and gives him the possibility to choose between sum or product of 1 to n
-* Topics: I/O, Control Flow(for, do, while)
-* Addition Topics: Control Flow(If, switch)
+A04P - ... that prints a multiplication table for numbers up to 12
+* Pre-reqs: A02
+* Topics: I/O Formatting, Arrays, Control Flow(for, do, while), Java Math
+* Addition A - Rather than using 0-12 as the x,y bounds, take 4 inputs, x-start, x-end, y-start, y-end. 
+* Addition A Topics: More I/O
+* Addition B - Give an option to output to a file, the user gets to pick the location.
+* Addition B Topics: File I/O, File Option Panes
 
 - - -
-A00P - ... that prints a multiplication table for numbers up to 12
-* Addition - Rather than using 0-12 as the x,y bounds, take 4 inputs, x-start, x-end, y-start, y-end. 
-* Topics: I/O Formatting, Arrays, Control Flow(for, do, while)
+A00P - Write a welcome prompt/menu that lets you select any of your programs, current nd future. Make it default to the current project you are working on. Keep it up to date as you complete assignments
+* Pre-reqs: A03, A04
+* Topics: Input/Output
 
 - - -
 A00P - ... that prints x number of prime numbers, where x is a number input by the user
@@ -80,8 +94,6 @@ A00P - ... that computes and prints the next 20 leap years from an input year
 - - -
 A00P - ... that computes \[4\cdot\sum_{k=1}^{10^6}\frac{(-1)^{k+1}}{2k-1}.\]
     Topics: Input, Parsing
-- - -
-A00P - Write a welcome prompt that lets you select any of the programs you have written so far. Upon the program asking, make it default to the current project you are working on. Keep it up to date as you complete assignments
 
 ### Strings, Arrays, Lists & other Collections ####
 - - -
