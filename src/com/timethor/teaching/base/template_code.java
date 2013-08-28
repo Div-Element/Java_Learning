@@ -4,7 +4,7 @@
 
 package com.timethor.teaching.base;
 
-import com.timethor.teaching.java.assignments.A02.Factorial.answers.MathHelper;
+import com.timethor.teaching.java.assignments.A02.Factorial.MathHelper;
 import java.util.Scanner;
 
 /**

@@ -75,25 +75,22 @@ A04P - ... that prints a multiplication table for numbers up to 12
 * Addition B Topics: File I/O, File Option Panes
 
 - - -
-A00P - Write a welcome prompt/menu that lets you select any of your programs, current nd future. Make it default to the current project you are working on. Keep it up to date as you complete assignments
+A05P - Write a welcome prompt/menu that lets you select any of your programs, current and future. Make it default to the current project you are working on. Keep it up to date as you complete assignments
 * Pre-reqs: A03, A04
 * Topics: Input/Output
 
 - - -
-A00P - ... that prints x number of prime numbers, where x is a number input by the user
+A06P - ... that computes and prints the next 20 leap years from an input year
+
+- - -
+A07P - ... that prints x number of prime numbers, where x is a number input by the user
+* Pre-reqs: 
 * Addition - Improve the program to use a lookup table?
 * Addition - Improve the program by using a more efficient method, try using a prime sieve
 * Topics: Caching, Collections, Control Flow, Algorithm translation
 
 - - -
-A00P - Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether his numbeer was too small or large. At the end the number of tries needed should be printed. It counts only as one try if the user inputs the same number consecutively.
-
-- - -
-A00P - ... that computes and prints the next 20 leap years from an input year
-    
-- - -
-A00P - ... that computes \[4\cdot\sum_{k=1}^{10^6}\frac{(-1)^{k+1}}{2k-1}.\]
-    Topics: Input, Parsing
+A08P - Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether his numbeer was too small or large. At the end the number of tries needed should be printed. It counts only as one try if the user inputs the same number consecutively.
 
 ### Strings, Arrays, Lists & other Collections ####
 - - -
@@ -134,6 +131,10 @@ A00P - that takes a list of strings and outputs them to the console in a frame o
 A00P - Pig latin to english, english to pig latin
     
 ### Intermediate ####
+- - -
+A00P - ... that computes \[4\cdot\sum_{k=1}^{10^6}\frac{(-1)^{k+1}}{2k-1}.\]
+* Pre-reqs: Latex knowledge, 
+* Topics: Input, Parsing
 - - -
 A00P - outputs all possibilities to put a plus, minus, or nothing between the numbers 1 -> 9 such that the result adds to 100, 1+2+3-4+5+6+78+9=100
 - - -
