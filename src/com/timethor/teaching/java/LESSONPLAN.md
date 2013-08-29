@@ -24,19 +24,12 @@ A00P - Proposed Assignment with no assigned number
 
 ### Elementary ####
 - - -
-L01P - Java Basics and Concepts
+L01P - Java Basics and Concepts - Part A
 * Pre-reqs: None
 * Topic: Objects and Behaviors => Classes and Methods - How do you make and use them?
 * Topic: Data Types - What are they? Why does Java have them?
 * Topic: Variables - Declarations and Definitions. Assignment methods.
 * Topic: Basic Operators - ( + - * / && || ! == != -- ++)
-* Topic: Expressions, Statements, Blocks - What are they? How do I use them?
-* Topic: Control Flow statements
-  * if, elseif, else
-  * switch
-  * do, while
-  * for
-* Branching statements - break, continue, return
 
 - - -
 A01C - Hello World with different methods of output
@@ -46,15 +39,35 @@ A01C - Hello World with different methods of output
 * Addition Topics: Strings
 
 - - -
-A02C - Write a program that asks the user for his/her name and greets him/her with that name with different input methods
+L02P - Java Basics and Concepts - Part B
 * Pre-reqs: A01
+* Topic: Expressions, Statements, Blocks - What are they? How do I use them?
+* Topic: Control Flow statements
+  * if, elseif, else
+  * switch
+  * do, while
+  * for
+* Branching statements - break, continue, return
+
+- - -
+A02C - Write a program that asks the user for his/her name and greets him/her with that name with different input methods
+* Pre-reqs: L02
 * Topics: Basics, Input, Output
 * Addition A - Modify to greet only alice and bob, say goodbye if it isn't.
 * Addition A Topics: Control Flow(If)
 
 - - -
-A03P - Write a program that asks the user for a number n and prints the sum of numbers 1 to n
+L03P - Java Basics and Concepts - Part B
 * Pre-reqs: A02
+* Topic: Nesting Control Flow statements
+  * if, elseif, else
+  * switch
+  * do, while
+  * for
+
+- - -
+A03P - Write a program that asks the user for a number n and prints the sum of numbers 1 to n
+* Pre-reqs: L03
 * Topics: I/O, Control Flow(for, do, while), Java Math
 * Addition A - give an option so that only multiples of three and five are considered in the sum. i.e. 3,5,9,15 for n=17
 * Addition B - give another option that gives the user the possibility to choose between sum or product of either 1 to n or addition A
