@@ -2,12 +2,12 @@
 
 ### How Assignments and Lessons are labeled
 
-| Type | Marker |
-|------|:------:|
-|Assignments |A|
-|Lessons     |L|
-|Completed   |C|
-|Proposed    |P|
+| Type | Marker |---| Completion | Marker |
+|------|:------:|------|------|:------:|
+|Assignments |A||Completed   |C|
+|Lessons     |L||Proposed    |P|
+
+
 
 Examples: <br />
 L01C - Lesson #01, Completed <br />
